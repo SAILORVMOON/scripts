@@ -1,0 +1,6 @@
+0 1 0 1 8 21
+input 0
+plus 2 3 2
+mult 1 2 1
+ifless 2 0 4 5
+print 1

@@ -1,0 +1,1 @@
+init a init b init c input a print a input b sum a b c print c
