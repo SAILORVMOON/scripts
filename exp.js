@@ -1,3 +1,3 @@
-a = true
-b = false
-WSH.Echo(a.toString());
+a = [];
+a[10] = 9;
+WSH.Echo(a[5] == null);
