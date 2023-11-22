@@ -1,2 +1,0 @@
-init a input a init b autoinput b 1 print b init c autoinput c 1 init d autoinput d 44 init e autoinput e 0 init f autoinput f 31 mult b a b minus a c a ifl e a f d ptint b
-0    1  2    3  4   5   6       7 8   9   0  1   2   3       4 5  6   7   8       9  0   1  2   3       4 5   6  7     8     9  0  1   2 3 4   5   6 7 8  9  0 1 2 3  4    5
