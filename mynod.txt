@@ -1,10 +1,23 @@
-0 0
+0 0 0 0 1 2 inf
 input 0
 input 1
-ifequal 0 1 28 11
-ifless 0 1 16 22
+checkgoodnum 0
+checkgoodnum 1
+plus 0 1 2
+ifequal 2 3 65 24
+ifequal 0 3 59 29
+ifequal 1 3 56 34
+ifequal 0 1 56 39
+ifless 0 1 44 50
 minus 1 0 1
-goto 6
+goto 34
 minus 0 1 0
-goto 6
+goto 34
 print 0
+end
+print 1
+end
+print 4
+end
+print 6
+end
