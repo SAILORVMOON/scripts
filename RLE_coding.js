@@ -1,22 +1,14 @@
 WSH.Echo("будьте так добры ввести строку");
 st = WSH.StdIn.ReadLine();
-
-
-
-
-
 ma = [];
-for (i = 0; i < st.length; i ++){
+for (i = 0; i < st.length; i ++)
     ma[i] = 0;
-}
-for (i = 0; i < st.length; i ++){
+for (i = 0; i < st.length; i ++)
     ma[st.charCodeAt(i)] += 1;
-}
 cou = ma[0];
 for (i = 0; i < st.length; i ++){
-    if (cou < ma[i]){
+    if (cou < ma[i])
         cou = ma[i];
-    }
 }
 //изза такого непечатаемые символы
 //неприкольно
@@ -52,9 +44,8 @@ while (escSym.length != 1){
 		WSH.Echo("все, короче делай что хочешь");
 		angry_cou++;
 	}
-	else if (angry_cou == 21){
+	else if (angry_cou == 21)
 		WSH.Echo();
-	}
 	else{
 		angry_text = very_angry_sen[Math.floor(Math.random() * 3)];
 		WSH.echo(angry_text);
@@ -66,30 +57,25 @@ while (escSym.length != 1){
 veryvery_angry_cong = "я теб€ очень-ќ„≈Ќ№ сильно поздравл€ю с тем, что ты каким-то чудесным образом справилс€ с этой невыполнимой задачей. я верю, что все родственники, знакомые и цыганские гадалки, которых ты непон€тно где откопал, помогли тебе решить этот загадочный квест.";
 cong = ["", "", "", "четвертого", "п€того", "шестого", "седьмого", "восьмого", "дев€того", "дес€того", "одиннадцатого"]
 
-if (angry_cou < 3){
+if (angry_cou < 3)
 	WSH.echo("Ѕлагодарю");
-}
-else if (angry_cou < 11){
+else if (angry_cou < 11)
 	WSH.echo("ѕоздравл€ю, с " + cong[angry_cou] + " раза до теб€ дошло");
-}
-else if (angry_cou == 21){
+else if (angry_cou == 21)
 	WSH.Echo(veryvery_angry_cong);
-}
-else{
+else
 	WSH.echo("наконец-то у теб€ получилось");
-}
 
 symb = st.charAt(0);
 cou = 1;
 stenc = ""
 for (j = 0; j < st.length; j++){
-	if(st.charCodeAt(j) == st.charCodeAt(j + 1)){ //тотже символ
+	if(st.charCodeAt(j) == st.charCodeAt(j + 1)) //тотже символ
 		cou++;
-	}
 	else{ //другой символ
 		if (st.charAt(j) == escSym){//эсксимвол
 			stenc += escSym + String.fromCharCode(cou) + st.charAt(j);
-		    	cou = 1;
+		    cou = 1;
 		}
 		else{//другой
 			if(cou > 3){
@@ -112,14 +98,12 @@ WSH.echo(stenc);
 stdec = "";
 for (i = 0; i < stenc.length; i++){
 	if (stenc.charCodeAt(i) == escSym.charCodeAt()){
-		for (k = 0; k < stenc.charCodeAt(i + 1); k++){
+		for (k = 0; k < stenc.charCodeAt(i + 1); k++)
 			stdec += stenc.charAt(i + 2);
-		}
 		i += 2
 	}
-	else {
+	else
 		stdec += stenc.charAt(i);
-	}
 }
 
 WSH.echo(stdec);
