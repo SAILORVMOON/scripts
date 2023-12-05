@@ -79,30 +79,25 @@ function printHashPow(str, books) {
         hashPow(str, books[i]);
     WSH.Echo(new Date().getTime(), "\n\n");
 }
-
+function printThree(str, book) {
+    printHowMany(str, book);
+    printHashSum(str, book);
+    printHashPow(str, book);
+}
+function doAll(strs, books) {
+    for (var i = 0; i < strs.length; i++)
+        printThree(strs[i], books)
+}
 
 var fso = new ActiveXObject("Scripting.FileSystemObject");
-var waptext1 = fso.OpenTextFile("C:\\Users\\lesha\\OneDrive\\Desktop\\scripts\\wap1.txt", 1).ReadAll();
-var waptext12 = waptext1 + fso.OpenTextFile("C:\\Users\\lesha\\OneDrive\\Desktop\\scripts\\wap2.txt", 1).ReadAll();
-var waptext123 = waptext12 + fso.OpenTextFile("C:\\Users\\lesha\\OneDrive\\Desktop\\scripts\\wap3.txt", 1).ReadAll();
-var waptext1234 = waptext123 + fso.OpenTextFile("C:\\Users\\lesha\\OneDrive\\Desktop\\scripts\\wap4.txt", 1).ReadAll();
+var waptext1 = fso.OpenTextFile("wap1.txt", 1).ReadAll();
+var waptext12 = waptext1 + fso.OpenTextFile("wap2.txt", 1).ReadAll();
+var waptext123 = waptext12 + fso.OpenTextFile("wap3.txt", 1).ReadAll();
+var waptext1234 = waptext123 + fso.OpenTextFile("wap4.txt", 1).ReadAll();
 var books = [waptext1, waptext12, waptext123, waptext1234];
+var strs = ["князь Андрей", "князь", "князь Андрей Болконский"]
 
-
-var str = "князь Андрей";
-printHowMany(str, books);
-printHashSum(str, books);
-printHashPow(str, books);
-
-str = "князь";
-printHowMany(str, books);
-printHashSum(str, books);
-printHashPow(str, books);
-
-str = "князь Андрей Болконский";
-printHowMany(str, books);
-printHashSum(str, books);
-printHashPow(str, books);
+doAll(strs, books);
 
 str = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
 aaaaa = fso.OpenTextFile("a106.txt", 1).ReadAll();
@@ -110,6 +105,3 @@ howMany(str, aaaaa);
 str = "baaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 howMany(str, aaaaa);
 WSH.Echo(new Date().getTime());
-
-
-
